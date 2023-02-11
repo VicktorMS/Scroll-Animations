@@ -1,0 +1,63 @@
+/* Pesquisar sobre @scroll-Timeline, uma feature CSS ainda não implementada */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+
+body{
+    background-color: #131316;
+    color: #ffffff;
+    font-family: 'Work Sans', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* overflow: hidden; */
+}
+section{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+section, .logos{
+    display: flex;
+    min-width: 100vw;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    text-align: center;
+}
+.hidden{
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s;
+}
+@media(prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+}
+.show{
+    filter: blur(0px);
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.logos{
+    gap: 1em;
+}
+.logo{
+    width: 20%;
+    height: 20%;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+.logo:nth-child(2){
+    transition-delay: 200ms;
+}
+.logo:nth-child(3){
+    transition-delay: 400ms;
+}
+.logo:nth-child(4){
+    transition-delay: 600ms;
+}
